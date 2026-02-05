@@ -320,7 +320,7 @@ const ProjectsSection = () => {
           className="text-center mt-16"
         >
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/ChiosDim"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all"

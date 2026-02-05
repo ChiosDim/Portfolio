@@ -16,7 +16,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             className="space-y-6"
           >
-            <p className="text-lg font-medium text-blue-600 dark:text-blue-400">
+            <p className="text-2xl font-medium text-blue-600 dark:text-blue-400">
               Hi, I'm
             </p>
 
@@ -25,7 +25,7 @@ const HeroSection = () => {
             </h1>
 
             <h2 className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300">
-              Software & Web Developer
+              Software Developer 💻
             </h2>
 
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
@@ -80,12 +80,12 @@ const HeroSection = () => {
             <pre className="text-gray-300 font-mono text-sm md:text-base overflow-x-auto">
               {`const developer = {
   name: "Dimitris",
-  role: "Aspiring Software Developer",
+  role: "Software Developer",
   stack: ["React", "Node.js", "Express"],
   tools: ["Git", "VSCode"],
-  mindset: "Always learning ❤️",
+  mindset: "Always learning and improving",
   goals: "Build scalable solutions",
-  location: "Greece"
+  location: "Thessaloniki, Greece"
 };`}
             </pre>
           </div>

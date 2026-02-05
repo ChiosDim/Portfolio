@@ -38,13 +38,12 @@ const AboutSection = () => {
             <p className="text-lg">
               I am a{" "}
               <span className="font-bold text-blue-600 dark:text-blue-400">
-                Full Stack Developer
+                Full Stack Software Developer
               </span>{" "}
-              with a strong focus on frontend development. I love turning complex
-              problems into efficient and maintainable solutions using modern
-              technologies.
+              with a strong focus on frontend development. I love turning
+              complex problems into efficient and maintainable solutions using
+              modern technologies.
             </p>
-
             <p className="text-lg">
               I hold a{" "}
               <span className="font-semibold">
@@ -52,6 +51,12 @@ const AboutSection = () => {
               </span>{" "}
               from the University of Macedonia and enjoy working on challenging
               projects that require creativity and logical thinking.
+            </p>
+
+            <p className="text-lg">
+              I'm actively expanding my skill set into emerging fields, having
+              been a finalist in the 'Project Future' program focused on
+              Generative AI technologies.
             </p>
 
             <div className="p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border-l-4 border-blue-500">
@@ -95,9 +100,10 @@ const AboutSection = () => {
                   </div>
                   <div>
                     <h4 className="font-bold">Currently Learning</h4>
-                    <p className="text-sm">
-                      Advanced React patterns, Web3 fundamentals, and System
-                      Design.
+                    <p className="text-md">
+                      Diving deeper into TypeScript for robust
+                      full-stack development and exploring advanced React
+                      patterns to write more scalable frontend architectures.
                     </p>
                   </div>
                 </div>
