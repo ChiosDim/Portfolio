@@ -136,7 +136,7 @@ const HeroSection = () => {
                   <span className="text-orange-300">mindset</span>
                   <span className="text-gray-500">:</span>{" "}
                   <span className="text-blue-300">
-                    Always learning and improving
+                    "Always learning and improving"
                   </span>
                   <span className="text-gray-500">,</span>
                   {"\n"}
