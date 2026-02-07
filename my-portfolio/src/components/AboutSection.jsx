@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 // Create explicit motion components so ESLint sees them as used
@@ -46,15 +46,15 @@ const AboutSection = () => {
                   whileInView={{ backgroundPosition: "100% 50%" }}
                   viewport={{ once: true }}
                   transition={{
-                    duration: 2,
+                    duration: 4,
                     repeat: Infinity,
                     repeatType: "reverse",
+                    ease: easeInOut,
                   }}
-                  className="font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-[length:200%_auto] bg-clip-text text-transparent"
+                  className="font-bold bg-linear-to-r from-blue-600 via-purple-500 to-pink-700 bg-size-[200%_auto] bg-clip-text text-transparent"
                 >
                   Full Stack Software Developer
                 </motion.span>
-                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></span>
               </span>{" "}
               with a strong focus on{" "}
               {/* Animated Gradient: frontend development */}
@@ -63,12 +63,13 @@ const AboutSection = () => {
                 whileInView={{ backgroundPosition: "100% 50%" }}
                 viewport={{ once: true }}
                 transition={{
-                  duration: 1.5,
+                  duration: 3.5,
                   repeat: Infinity,
                   repeatType: "reverse",
-                  delay: 0.3,
+                  delay: 0.5,
+                  ease: easeInOut,
                 }}
-                className="font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 bg-[length:200%_auto] bg-clip-text text-transparent"
+                className="font-bold bg-linear-to-r from-blue-600 via-purple-500 to-pink-700 bg-size-[200%_auto] bg-clip-text text-transparent"
               >
                 frontend development
               </motion.span>
@@ -84,12 +85,13 @@ const AboutSection = () => {
                 whileInView={{ backgroundPosition: "100% 50%" }}
                 viewport={{ once: true }}
                 transition={{
-                  duration: 2,
+                  duration: 4,
                   repeat: Infinity,
                   repeatType: "reverse",
-                  delay: 0.5,
+                  delay: 0.8,
+                  ease: easeInOut
                 }}
-                className="font-semibold bg-gradient-to-r from-green-500 to-emerald-500 bg-[length:200%_auto] bg-clip-text text-transparent"
+                className="font-bold bg-linear-to-r from-blue-600 via-purple-500 to-pink-700 bg-size-[200%_auto] bg-clip-text text-transparent"
               >
                 Bachelor's degree in Applied Informatics
               </motion.span>{" "}
@@ -99,12 +101,13 @@ const AboutSection = () => {
                 whileInView={{ backgroundPosition: "100% 50%" }}
                 viewport={{ once: true }}
                 transition={{
-                  duration: 1.8,
+                  duration: 4,
                   repeat: Infinity,
                   repeatType: "reverse",
-                  delay: 0.7,
+                  delay: 1.1,
+                  ease: easeInOut
                 }}
-                className="font-semibold bg-gradient-to-r from-orange-500 to-red-500 bg-[length:200%_auto] bg-clip-text text-transparent"
+                className="font-bold bg-linear-to-r from-blue-600 via-purple-500 to-pink-700 bg-size-[200%_auto] bg-clip-text text-transparent"
               >
                 University of Macedonia
               </motion.span>{" "}
@@ -118,7 +121,7 @@ const AboutSection = () => {
               Generative AI technologies.
             </p>
 
-            <div className="p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl border-l-4 border-blue-500 backdrop-blur-sm">
+            <div className="p-6 bg-linear-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl border-l-4 border-blue-500 backdrop-blur-sm">
               <p className="italic text-gray-800 dark:text-gray-200">
                 "My goal is to write code that is not just functional, but also
                 clean, scalable, and a joy for other developers to work with."
