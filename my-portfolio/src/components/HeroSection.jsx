@@ -7,7 +7,7 @@ const MotionA = motion.a;
 
 const HeroSection = () => {
   return (
-    <section className="min-h-[90vh] flex items-center px-6 md:px-12 lg:px-24 py-20">
+    <section className="min-h-[90vh] flex items-center px-6 md:px-12 lg:px-24 py-20 bg-transparent backdrop-blur-sm">
       <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left: Text Content */}
         <div className="flex-1 text-center lg:text-left">
@@ -16,17 +16,18 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             className="space-y-6"
           >
-            <p className="text-2xl font-medium text-blue-600 dark:text-blue-400">
-              Hi, I'm
-            </p>
-
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              Dimitris!
+            <h1 className="text-5xl font-bold leading-tight text-gray-300 dark:text-white-400">
+              Hi, I'm{" "}
+              <span className="bg-linear-to-r from-[#697eb8] via-[#8178b9] to-[#4e41a7] bg-clip-text text-transparent">
+                Dimitris!
+              </span>
             </h1>
 
             <h2 className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300">
               Software Developer 💻
             </h2>
+            {/* White underline/divider */}
+            <div className="h-[2px] w-full bg-linear-to-r from-transparent via-white/60 to-transparent dark:from-transparent dark:via-gray-400/60 dark:to-transparent mt-3"></div>
 
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
               I enjoy learning new technologies and building efficient, scalable
@@ -65,30 +66,116 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
-          className="flex-1 w-full max-w-lg"
+          className="flex-1 w-full max-w-lg relative group"
         >
-          <div className="bg-gray-900 rounded-2xl p-6 shadow-2xl overflow-hidden">
-            {/* Window buttons */}
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              <span className="ml-4 text-sm text-gray-400">developer.js</span>
+          {/* Gradient Glow Shadow */}
+          <div className="absolute -inset-3 bg-linear-to-r from-blue-500 via-purple-400 to-pink-700 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 -z-10"></div>
+          {/* Main Code Container */}
+          <div className="relative bg-gray-900 rounded-2xl overflow-hidden border border-gray-700 shadow-2xl">
+            {/* Window Header with File Badge */}
+            <div className="flex items-center justify-between px-6 py-4 bg-gray-800 border-b border-gray-700">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                <span className="ml-4 text-sm text-gray-400 font-mono">
+                  developer.js
+                </span>
+              </div>
+              <div className="px-3 py-1 bg-blue-900/50 rounded-full border border-blue-700">
+                <span className="text-blue-300 text-xs font-semibold">
+                  JavaScript
+                </span>
+              </div>
             </div>
 
-            {/* Code */}
-            <pre className="text-gray-300 font-mono text-sm md:text-base overflow-x-auto">
-              {`const developer = {
-  name: "Dimitris",
-  role: "Software Developer",
-  stack: ["React", "Node.js", "Express"],
-  tools: ["Git", "VSCode"],
-  mindset: "Always learning and improving",
-  goals: "Build scalable solutions",
-  location: "Thessaloniki, Greece"
-};`}
-            </pre>
+            {/* Code with Syntax Highlighting */}
+            <div className="p-6">
+              <pre className="text-sm md:text-base overflow-x-auto font-mono">
+                <code className="text-gray-300">
+                  <span className="text-purple-400">const</span>{" "}
+                  <span className="text-white">developer</span>{" "}
+                  <span className="text-gray-500">=</span>{" "}
+                  <span className="text-white">{"{"}</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-orange-300">name</span>
+                  <span className="text-gray-500">:</span>{" "}
+                  <span className="text-blue-300">"Dimitris"</span>
+                  <span className="text-gray-500">,</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-orange-300">role</span>
+                  <span className="text-gray-500">:</span>{" "}
+                  <span className="text-blue-300">"Software Developer"</span>
+                  <span className="text-gray-500">,</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-orange-300">stack</span>
+                  <span className="text-gray-500">:</span>{" "}
+                  <span className="text-white">[</span>
+                  <span className="text-red-400">"React"</span>
+                  <span className="text-gray-500">, </span>
+                  <span className="text-red-400">"Node.js"</span>
+                  <span className="text-gray-500">, </span>
+                  <span className="text-red-400">"Express"</span>
+                  <span className="text-white">]</span>
+                  <span className="text-gray-500">,</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-orange-300">tools</span>
+                  <span className="text-gray-500">:</span>{" "}
+                  <span className="text-white">[</span>
+                  <span className="text-red-400">"Git"</span>
+                  <span className="text-gray-500">, </span>
+                  <span className="text-red-400">"VSCode"</span>
+                  <span className="text-white">]</span>
+                  <span className="text-gray-500">,</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-orange-300">mindset</span>
+                  <span className="text-gray-500">:</span>{" "}
+                  <span className="text-blue-300">
+                    Always learning and improving
+                  </span>
+                  <span className="text-gray-500">,</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-orange-300">goals</span>
+                  <span className="text-gray-500">:</span>{" "}
+                  <span className="text-blue-300">
+                    "Build scalable solutions"
+                  </span>
+                  <span className="text-gray-500">,</span>
+                  {"\n"}
+                  {"  "}
+                  <span className="text-orange-300">location</span>
+                  <span className="text-gray-500">:</span>{" "}
+                  <span className="text-blue-300">"Thessaloniki, Greece"</span>
+                  {"\n"}
+                  <span className="text-white">{"}"}</span>
+                  <span className="text-gray-500">;</span>
+                </code>
+              </pre>
+
+              {/* Animated Cursor */}
+              <div className="flex items-center gap-2 mt-6 pt-4 border-t border-gray-800">
+                <div className="w-2 h-4 bg-green-500 animate-bounce"></div>
+                <span className="text-gray-400 text-sm font-mono">
+                  // Ready to build something amazing?
+                </span>
+              </div>
+            </div>
           </div>
+
+          {/* Subtle Floating Animation */}
+          <MotionDiv
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -bottom-4 left-1/2 transform -translate-x-1/2"
+          >
+            <div className="w-24 h-1 bg-linear-to-r from-transparent via-blue-500 to-transparent rounded-full opacity-70"></div>
+          </MotionDiv>
         </MotionDiv>
       </div>
     </section>

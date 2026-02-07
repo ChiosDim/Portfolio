@@ -93,7 +93,7 @@ const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="py-20 px-6 md:px-12 lg:px-24 bg-gray-50 dark:bg-gray-900"
+      className="py-20 px-6 md:px-12 lg:px-24 bg-transparent backdrop-blur-sm"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -162,7 +162,7 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-full">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-linear-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-full">
             <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
             <span className="text-gray-700 dark:text-gray-300">
               Always learning new technologies and best practices

@@ -85,7 +85,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="py-20 px-6 md:px-12 lg:px-24 bg-linear-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900"
+      className="py-20 px-6 md:px-12 lg:px-24 bg-transparent backdrop-blur-sm"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}

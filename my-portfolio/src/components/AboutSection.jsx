@@ -16,7 +16,10 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-6 md:px-12 lg:px-24">
+    <section
+      id="about"
+      className="py-20 px-6 md:px-12 lg:px-24 bg-transparent backdrop-blur-sm"
+    >
       <div className="max-w-7xl mx-auto">
         <MotionH2
           initial={{ opacity: 0, y: 20 }}
@@ -37,20 +40,76 @@ const AboutSection = () => {
           >
             <p className="text-lg">
               I am a{" "}
-              <span className="font-bold text-blue-600 dark:text-blue-400">
-                Full Stack Software Developer
+              <span className="relative inline-block">
+                <motion.span
+                  initial={{ backgroundPosition: "0% 50%" }}
+                  whileInView={{ backgroundPosition: "100% 50%" }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                  }}
+                  className="font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-[length:200%_auto] bg-clip-text text-transparent"
+                >
+                  Full Stack Software Developer
+                </motion.span>
+                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></span>
               </span>{" "}
-              with a strong focus on frontend development. I love turning
-              complex problems into efficient and maintainable solutions using
-              modern technologies.
+              with a strong focus on{" "}
+              {/* Animated Gradient: frontend development */}
+              <motion.span
+                initial={{ backgroundPosition: "0% 50%" }}
+                whileInView={{ backgroundPosition: "100% 50%" }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  delay: 0.3,
+                }}
+                className="font-semibold bg-gradient-to-r from-cyan-500 to-blue-500 bg-[length:200%_auto] bg-clip-text text-transparent"
+              >
+                frontend development
+              </motion.span>
+              . I love turning complex problems into efficient and maintainable
+              solutions using modern technologies.
             </p>
+
             <p className="text-lg">
               I hold a{" "}
-              <span className="font-semibold">
+              {/* Animated Gradient: Bachelor's degree in Applied Informatics */}
+              <motion.span
+                initial={{ backgroundPosition: "0% 50%" }}
+                whileInView={{ backgroundPosition: "100% 50%" }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  delay: 0.5,
+                }}
+                className="font-semibold bg-gradient-to-r from-green-500 to-emerald-500 bg-[length:200%_auto] bg-clip-text text-transparent"
+              >
                 Bachelor's degree in Applied Informatics
-              </span>{" "}
-              from the University of Macedonia and enjoy working on challenging
-              projects that require creativity and logical thinking.
+              </motion.span>{" "}
+              from the {/* Animated Gradient: University of Macedonia */}
+              <motion.span
+                initial={{ backgroundPosition: "0% 50%" }}
+                whileInView={{ backgroundPosition: "100% 50%" }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  delay: 0.7,
+                }}
+                className="font-semibold bg-gradient-to-r from-orange-500 to-red-500 bg-[length:200%_auto] bg-clip-text text-transparent"
+              >
+                University of Macedonia
+              </motion.span>{" "}
+              and enjoy working on challenging projects that require creativity
+              and logical thinking.
             </p>
 
             <p className="text-lg">
@@ -59,7 +118,7 @@ const AboutSection = () => {
               Generative AI technologies.
             </p>
 
-            <div className="p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border-l-4 border-blue-500">
+            <div className="p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl border-l-4 border-blue-500 backdrop-blur-sm">
               <p className="italic text-gray-800 dark:text-gray-200">
                 "My goal is to write code that is not just functional, but also
                 clean, scalable, and a joy for other developers to work with."
@@ -101,9 +160,9 @@ const AboutSection = () => {
                   <div>
                     <h4 className="font-bold">Currently Learning</h4>
                     <p className="text-md">
-                      Diving deeper into TypeScript for robust
-                      full-stack development and exploring advanced React
-                      patterns to write more scalable frontend architectures.
+                      Diving deeper into TypeScript for robust full-stack
+                      development and exploring advanced React patterns to write
+                      more scalable frontend architectures.
                     </p>
                   </div>
                 </div>
