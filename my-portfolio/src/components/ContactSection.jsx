@@ -1,6 +1,7 @@
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
+import emailjs from "@emailjs/browser"; // IMPORT EMAILJS
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,12 @@ const ContactSection = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+  const [isError, setIsError] = useState(false);
+
+  // Get EmailJS credentials from environment variables
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,17 +30,62 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setIsError(false);
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setSubmitMessage("Please fill in all fields.");
+      setIsError(true);
       setIsSubmitting(false);
-      setSubmitMessage("Message sent successfully! I'll get back to you soon.");
-      setFormData({ name: "", email: "", message: "" });
-
-      // Clear success message after 5 seconds
       setTimeout(() => setSubmitMessage(""), 5000);
-    }, 1500);
+      return;
+    }
+
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      setSubmitMessage("Please enter a valid email address.");
+      setIsError(true);
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitMessage(""), 5000);
+      return;
+    }
+
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          time: new Date().toLocaleString(),
+          subject: `Portfolio Message from ${formData.name}`,
+        },
+        EMAILJS_PUBLIC_KEY,
+      );
+
+      if (result.text === "OK") {
+        setSubmitMessage(
+          "Message sent successfully! I'll get back to you soon.",
+        );
+        setIsError(false);
+        setFormData({ name: "", email: "", message: "" });
+
+        // Clear success message after 5 seconds
+        setTimeout(() => setSubmitMessage(""), 5000);
+      }
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setSubmitMessage(
+        "Failed to send message. Please email me directly at chiosdimit@gmail.com",
+      );
+      setIsError(true);
+
+      // Clear error message after 5 seconds
+      setTimeout(() => setSubmitMessage(""), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -86,7 +138,8 @@ const ContactSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white/50 dark:bg-gray-800/50 border border-gray-300/50 dark:border-gray-700/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all backdrop-blur-sm"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 bg-white/50 dark:bg-gray-800/50 border border-gray-300/50 dark:border-gray-700/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all backdrop-blur-sm disabled:opacity-50"
                       placeholder="John Doe"
                     />
                   </div>
@@ -106,7 +159,8 @@ const ContactSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white/50 dark:bg-gray-800/50 border border-gray-300/50 dark:border-gray-700/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all backdrop-blur-sm"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 bg-white/50 dark:bg-gray-800/50 border border-gray-300/50 dark:border-gray-700/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all backdrop-blur-sm disabled:opacity-50"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -126,10 +180,27 @@ const ContactSection = () => {
                       onChange={handleChange}
                       required
                       rows="5"
-                      className="w-full px-4 py-3 bg-white/50 dark:bg-gray-800/50 border border-gray-300/50 dark:border-gray-700/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none backdrop-blur-sm"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 bg-white/50 dark:bg-gray-800/50 border border-gray-300/50 dark:border-gray-700/50 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none backdrop-blur-sm disabled:opacity-50"
                       placeholder="Hi Dimitris, I'd like to discuss a potential project..."
                     />
                   </div>
+
+                  {/* Status Message */}
+                  {submitMessage && (
+                    <Motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={`p-4 rounded-xl text-center backdrop-blur-sm ${
+                        isError
+                          ? "bg-red-100/80 dark:bg-red-900/40 text-red-800 dark:text-red-300"
+                          : "bg-green-100/80 dark:bg-green-900/40 text-green-800 dark:text-green-300"
+                      }`}
+                    >
+                      {isError ? "✗ " : "✓ "}
+                      {submitMessage}
+                    </Motion.div>
+                  )}
 
                   {/* Submit Button */}
                   <Motion.button
@@ -155,24 +226,16 @@ const ContactSection = () => {
                     )}
                   </Motion.button>
 
-                  {/* Success Message */}
-                  {submitMessage && (
-                    <Motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="p-4 bg-green-100/80 dark:bg-green-900/40 text-green-800 dark:text-green-300 rounded-xl text-center backdrop-blur-sm"
-                    >
-                      ✓ {submitMessage}
-                    </Motion.div>
-                  )}
-
                   {/* Note */}
                   <p className="text-sm text-gray-600 dark:text-gray-400 text-center pt-4">
                     I typically respond within 24 hours. You can also email me
                     directly at{" "}
-                    <span className="font-semibold text-blue-600 dark:text-blue-400">
+                    <a
+                      href="mailto:chiosdimit@gmail.com"
+                      className="font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+                    >
                       chiosdimit@gmail.com
-                    </span>
+                    </a>
                   </p>
                 </form>
               </div>
