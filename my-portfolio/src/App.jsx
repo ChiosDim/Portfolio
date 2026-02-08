@@ -6,6 +6,7 @@ import AboutSection from "./components/AboutSection";
 import SkillsSection from "./components/SkillSection";
 import ProjectsSection from "./components/ProjectSection";
 import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 import Aurora from "./components/Aurora";
 import "./App.css";
 
@@ -27,13 +28,7 @@ function App() {
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
-
-        {/* Simple Footer */}
-        <footer className="py-8 text-center border-t border-gray-200 dark:border-gray-800 mt-20">
-          <p className="text-gray-600 dark:text-gray-400">
-            Built with React, Tailwind CSS v4 & Framer Motion
-          </p>
-        </footer>
+        <Footer />
       </div>
     </>
   );

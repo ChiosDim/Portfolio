@@ -53,7 +53,7 @@ const AboutSection = () => {
                   }}
                   className="font-bold bg-linear-to-r from-blue-600 via-purple-500 to-pink-700 bg-size-[200%_auto] bg-clip-text text-transparent"
                 >
-                  Full Stack Software Developer
+                  Full Stack Software and Web Developer
                 </motion.span>
               </span>{" "}
               with a strong focus on{" "}

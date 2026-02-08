@@ -24,7 +24,7 @@ const HeroSection = () => {
             </h1>
 
             <h2 className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300">
-              Software Developer 💻
+              Software and Web Developer 💻
             </h2>
             {/* White underline/divider */}
             <div className="h-[2px] w-full bg-linear-to-r from-transparent via-white/60 to-transparent dark:from-transparent dark:via-gray-400/60 dark:to-transparent mt-3"></div>
@@ -107,7 +107,7 @@ const HeroSection = () => {
                   {"  "}
                   <span className="text-orange-300">role</span>
                   <span className="text-gray-500">:</span>{" "}
-                  <span className="text-blue-300">"Software Developer"</span>
+                  <span className="text-blue-300">"Software and Web Developer"</span>
                   <span className="text-gray-500">,</span>
                   {"\n"}
                   {"  "}
