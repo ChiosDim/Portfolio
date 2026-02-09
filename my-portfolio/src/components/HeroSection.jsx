@@ -69,7 +69,7 @@ const HeroSection = () => {
           className="flex-1 w-full max-w-lg relative group"
         >
           {/* Gradient Glow Shadow */}
-          <div className="absolute -inset-3 bg-linear-to-r from-blue-500 via-purple-400 to-pink-700 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 -z-10"></div>
+          <div className="absolute -inset-3 bg-linear-to-r from-blue-500 via-purple-400 to-pink-950 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 -z-10"></div>
           {/* Main Code Container */}
           <div className="relative bg-gray-900 rounded-2xl overflow-hidden border border-gray-700 shadow-2xl">
             {/* Window Header with File Badge */}
