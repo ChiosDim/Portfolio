@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Code2, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = ({
   brandName = "DChios",
@@ -32,9 +32,10 @@ const Navbar = ({
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="flex items-center gap-3 text-blue-400 hover:text-blue-300 transition-colors"
+              className="flex items-center gap-3 transition-colors"
             >
-              <Code2 className="size-7" />
+              {/* Use favicon.svg from public folder */}
+              <img src="/favicon.svg" alt="DC Logo" className="h-7 w-7" />
               <span className="text-xl font-bold text-white tracking-tight">
                 {brandName}
               </span>
