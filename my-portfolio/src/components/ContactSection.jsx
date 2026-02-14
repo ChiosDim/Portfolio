@@ -1,7 +1,7 @@
 import { motion as Motion } from "framer-motion";
 import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
-import emailjs from "@emailjs/browser"; // IMPORT EMAILJS
+import emailjs from "@emailjs/browser"; 
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
