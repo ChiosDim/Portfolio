@@ -1,16 +1,26 @@
-# React + Vite
+# My Portfolio 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  This is the source code for my personal portfolio site. I built it to showcase my work, share a bit about myself, and make it easy for people to reach out.
 
-Currently, two official plugins are available:
+## What's Inside
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- A clean, responsive interface that works on any device
+- Smooth animations using Framer Motion
+- My featured projects – web apps, interactive games, and an Unreal Engine 5 project 
+- A working contact form that actually sends emails
+- My social links and downloadable resume
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I kept it simple but modern:
 
-## Expanding the ESLint configuration
+- **React** – because component-based UI just makes sense
+- **Vite** – for that instant dev experience
+- **Tailwind CSS** – I used to fight with CSS, now I don't
+- **Framer Motion** – for buttery smooth animations
+- **EmailJS** – handles the contact form without a backend
+- **Vercel** – deployment that just works
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Live Site
+
+See it in action at https://chiosdimitris.vercel.app
