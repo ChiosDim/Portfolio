@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const MotionDiv = motion.div;
 
 const SkillsSection = () => {
-  // Organized skill groups - HORIZONTAL sections
+  // Organized skill groups
   const skillGroups = [
     {
       title: "Frontend",
@@ -109,7 +109,7 @@ const SkillsSection = () => {
           </p>
         </MotionDiv>
 
-        {/* Skill Groups - 3 Horizontal Sections */}
+        {/* Skill Groups - RESPONSIVE GRID */}
         <div className="space-y-16">
           {skillGroups.map((group, groupIndex) => (
             <div key={groupIndex} className="space-y-8">
@@ -123,33 +123,35 @@ const SkillsSection = () => {
                 {group.title}
               </MotionDiv>
 
-              {/* Skills Container - HORIZONTAL */}
-              <div className="overflow-x-auto pb-4 -mx-4 px-4">
-                <div className="flex gap-6 min-w-min">
-                  {group.skills.map((skill, skillIndex) => (
-                    <MotionDiv
-                      key={skill.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: skillIndex * 0.1 }}
-                      whileHover={{ scale: 1.1, y: -10 }}
-                      className="group bg-gray-900/60 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center gap-4 shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-1 hover:border-[#9d92e3]/60 hover:shadow-3xl hover:shadow-blue-900/70 min-w-[140px] shrink-0"
-                    >
-                      {/* BIG Icon - Using CDN image */}
-                      <img
-                        src={skill.icon}
-                        alt={skill.name}
-                        className="w-16 h-16 transition-transform duration-300 group-hover:scale-110"
-                      />
+              {/* Skills Grid - No horizontal scroll! */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                {group.skills.map((skill, skillIndex) => (
+                  <MotionDiv
+                    key={skill.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: skillIndex * 0.05 }}
+                    whileHover={{
+                      scale: 1.05,
+                      y: -5,
+                      transition: { type: "spring", stiffness: 300 },
+                    }}
+                    className="group bg-gray-900/60 backdrop-blur-md border border-white/10 rounded-xl p-4 flex flex-col items-center justify-center gap-3 shadow-lg hover:shadow-xl hover:border-[#9d92e3]/60 transition-all duration-300"
+                  >
+                    {/* Icon */}
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      className="w-12 h-12 transition-transform duration-300 group-hover:scale-110"
+                    />
 
-                      {/* Skill Name */}
-                      <span className="text-gray-200 font-semibold text-center">
-                        {skill.name}
-                      </span>
-                    </MotionDiv>
-                  ))}
-                </div>
+                    {/* Skill Name */}
+                    <span className="text-gray-200 font-medium text-sm text-center">
+                      {skill.name}
+                    </span>
+                  </MotionDiv>
+                ))}
               </div>
             </div>
           ))}
@@ -162,7 +164,7 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-linear-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-full">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-full">
             <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
             <span className="text-gray-700 dark:text-gray-300">
               Always learning new technologies and best practices
