@@ -9,6 +9,7 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 import Aurora from "./components/Aurora";
 import "./App.css";
+import { Analytics } from "@vercel/analytics/next";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <ProjectsSection />
         <ContactSection />
         <Footer />
+        <Analytics />
       </div>
     </>
   );
