@@ -27,7 +27,7 @@ const HeroSection = () => {
               Software and Web Developer 💻
             </h2>
             {/* White underline/divider */}
-            <div className="h-[2px] w-full bg-linear-to-r from-transparent via-white/60 to-transparent dark:from-transparent dark:via-gray-400/60 dark:to-transparent mt-3"></div>
+            <div className="h-0.5 w-full bg-linear-to-r from-transparent via-white/60 to-transparent dark:from-transparent dark:via-gray-400/60 dark:to-transparent mt-3"></div>
 
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
               I enjoy learning new technologies and building efficient, scalable

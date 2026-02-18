@@ -129,7 +129,7 @@ export default function Aurora(props) {
       premultipliedAlpha: true,
       antialias: true,
     });
-    const gl = renderer.gl;
+    const { gl } = renderer;
     gl.clearColor(0, 0, 0, 0);
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);

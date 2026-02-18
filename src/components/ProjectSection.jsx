@@ -322,7 +322,7 @@ const ProjectsSection = () => {
                 {/* Category Badge */}
                 <div className="absolute top-4 right-4 z-20">
                   <span
-                    className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap max-w-[100px] truncate ${
+                    className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap max-w-25 truncate ${
                       project.category === "web"
                         ? "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300"
                         : project.category === "game-dev"

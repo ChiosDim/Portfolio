@@ -61,7 +61,7 @@ function SocialLinks() {
         {links.map(({ id, child, href, style, download, title }) => (
           <li
             key={id}
-            className={`flex justify-between items-center w-44 h-14 px-4 my-2 ml-[-112px] hover:ml-[-8px] rounded-md transition-all duration-300 hover:shadow-lg
+            className={`flex justify-between items-center w-44 h-14 px-4 my-2 -ml-28 hover:-ml-2 rounded-md transition-all duration-300 hover:shadow-lg
               ${style || ""}
               bg-gray-900/80 backdrop-blur-sm border border-gray-800 text-gray-200 hover:text-blue-400 hover:bg-gray-900 hover:border-blue-500`}
           >
