@@ -14,12 +14,12 @@
 
 I kept it simple but modern:
 
-- **React** – because component-based UI just makes sense
-- **Vite** – for that instant dev experience
-- **Tailwind CSS** – I used to fight with CSS, now I don't
-- **Framer Motion** – for buttery smooth animations
-- **EmailJS** – handles the contact form without a backend
-- **Vercel** – deployment that just works
+- **React** 
+- **Vite** 
+- **Tailwind CSS** 
+- **Framer Motion**
+- **EmailJS** 
+- **Vercel**
 
 ## Live Site
 
