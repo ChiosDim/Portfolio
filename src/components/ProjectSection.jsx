@@ -12,6 +12,10 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaNodeJs,
+  FaSpotify,
+  FaChartBar,
+  FaDice,
+  FaReact,
 } from "react-icons/fa";
 import { SiEjs, SiUnrealengine, SiCplusplus } from "react-icons/si";
 
@@ -82,6 +86,24 @@ const ProjectsSection = () => {
     },
     {
       id: 4,
+      title: "Spotify Playlist Analyzer",
+      description:
+        "A full-stack web app that analyzes Spotify playlists with genre distribution, audio feature statistics, duplicate detection, similar-track discovery, and Last.fm-powered recommendations. Upload an Exportify CSV or connect your Spotify account.",
+      tags: ["React", "Node.js", "MongoDB", "Redis", "Spotify API"],
+      icons: [
+        <FaSpotify key="spotify" />,
+        <FaChartBar key="chart" />,
+        <FaNodeJs key="node" />,
+      ],
+      github: "https://github.com/ChiosDim/spotify-playlist-analyzer",
+      liveDemo: "https://spotify-playlist-analyzer-theta.vercel.app",
+      color: "from-green-600 to-emerald-400",
+      featured: false,
+      category: "web",
+      hasLiveDemo: true,
+    },
+    {
+      id: 5,
       title: "Movie-Time",
       description:
         "A cinema-focused web experience built with EJS templates and JavaScript, emphasizing dynamic content rendering and template-based development.",
@@ -105,21 +127,25 @@ const ProjectsSection = () => {
       hasLiveDemo: true,
     },
     {
-      id: 5,
-      title: "Booklist App",
+      id: 6,
+      title: "Tenzies Game",
       description:
-        "An interactive web app for managing a list of books — focused on JavaScript logic, DOM updates, and simple UI interactions. Perfect for showcasing foundational web dev skills.",
-      tags: ["JavaScript", "DOM", "CRUD", "Frontend", "Learning Project"],
-      icons: [<FaBook key="book" />, <FaJs key="js" />, <FaHtml5 key="html" />],
-      github: "https://github.com/ChiosDim/Booklist-app",
-      liveDemo: "https://chiosdim.github.io/Booklist-app/",
-      color: "from-green-500 to-emerald-500",
+        "A React implementation of the Tenzies dice game. Roll eight dice and hold the ones you want to keep until they all show the same number. Built as a deep dive into React state management and interactive UI design.",
+      tags: ["React", "JavaScript", "Game", "State Management", "UI/UX"],
+      icons: [
+        <FaDice key="dice" />,
+        <FaReact key="react" />,
+        <FaJs key="js" />,
+      ],
+      github: "https://github.com/ChiosDim/tenzies",
+      liveDemo: "https://tenzies-beta-ebon.vercel.app",
+      color: "from-red-500 to-rose-500",
       featured: false,
-      category: "web",
+      category: "interactive",
       hasLiveDemo: true,
     },
     {
-      id: 6,
+      id: 7,
       title: "Simon Game",
       description:
         "Classic memory game recreated in the browser. Focuses on game logic and UI interactivity using vanilla JavaScript and CSS animations.",
@@ -143,7 +169,7 @@ const ProjectsSection = () => {
       hasLiveDemo: true,
     },
     {
-      id: 7,
+      id: 8,
       title: "Drum Kit Game",
       description:
         "A sound-interactive web app built with JavaScript, turning key presses and clicks into real drum sounds — excellent example of DOM event handling and multimedia integration.",
